@@ -1,10 +1,10 @@
-// import React from "react";
+import React from "react";
 import logo from "../assets//logo-text.png";
 const Nav = () => {
   return (
     <div className="flex items-center justify-around sticky top-0 bg-white py-5">
       {/* left side image */}
-      <img src={logo} alt="" />
+      <img src={logo} alt="Dev Stack" />
 
       {/* middle a nav item */}
       <div className="flex gap-6 ">
