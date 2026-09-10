@@ -4,8 +4,20 @@ import Nav from './components/Nav';
 const App = () => {
   return (
     <div>
-      Dev Stack
       <Nav/>
+      <h1 className="text-9xl">hi</h1>
+      <h1 className="text-9xl">hi</h1>
+      <h1 className="text-9xl">hi</h1>
+      <h1 className="text-9xl">hi</h1>
+      <h1 className="text-9xl">hi</h1>
+      <h1 className="text-9xl">hi</h1>
+      <h1 className="text-9xl">hi</h1>
+      <h1 className="text-9xl">hi</h1>
+      <h1 className="text-9xl">hi</h1>
+      <h1 className="text-9xl">hi</h1>
+      <h1 className="text-9xl">hi</h1>
+      <h1 className="text-9xl">hi</h1>
+
     </div>
   );
 };
