@@ -2,6 +2,8 @@
 import Nav from './components/Nav';
 import Hero from './components/Hero';
 import Footer from './components/Footer';
+import Technologies from './components/Technologies';
+import Card from './components/Card';
 
 const App = () => {
   return (
@@ -10,6 +12,8 @@ const App = () => {
       <Hero/>
       <br />
       <br />
+      <Technologies/>
+      <Card/>
        <div className="divider"></div>
       <Footer/>
     </div>
