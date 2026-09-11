@@ -3,7 +3,7 @@ import Nav from './components/Nav';
 import Hero from './components/Hero';
 import Footer from './components/Footer';
 import Technologies from './components/Technologies';
-import Card from './components/Card';
+
 
 const App = () => {
   return (
@@ -13,7 +13,8 @@ const App = () => {
       <br />
       <br />
       <Technologies/>
-      <Card/>
+      <br />
+      <br />
        <div className="divider"></div>
       <Footer/>
     </div>
