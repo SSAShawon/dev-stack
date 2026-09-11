@@ -1,8 +1,30 @@
 // import React from 'react';
 
+import { use } from "react";
 import Card from "./Card";
 
+interface Technology {
+  id: number;
+  name: string;
+  category: string;
+  description: string;
+  icon: string;
+  rating: number;
+  difficulty: string;
+  badge: string;
+}
+
+const getTechnologies= async()=>{
+  const res= await fetch("/technologies.json");
+  const data= await res.json();
+  return data;
+}
+
+const technologyPromise=getTechnologies()
+
+
 const Technologies = () => {
+  const technologies =use(technologyPromise);
   return (
     <div>
       <div className="w-[80%] mx-auto">
@@ -17,12 +39,11 @@ const Technologies = () => {
         {/* Tech Card  */}
         <div className="col-span-3">
           <div className="grid grid-cols-3 gap-5">
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
+                {
+                  technologies.map((technology:Technology)=>(
+                    <Card key={technology.id} technology={technology}/>
+                  ))
+                }
           </div>
         </div>
 
