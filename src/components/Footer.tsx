@@ -3,15 +3,15 @@ import logo from "../assets/logo-text.png";
 const Footer = () => {
   return (
     <div className="w-[80%] mx-auto">
-      <div className="grid grid-cols-5 gap-15 py-7">
+      <div className="grid sm:grid-cols-5 gap-15 py-7">
         {/* 1st part */}
         <div className="col-span-2">
-          <img src={logo} alt="" />
-          <p className="pb-6 pt-2 text-gray-600">
+          <img src={logo} alt="" className="mx-auto sm:mx-0"/>
+          <p className="pb-6 pt-2 text-gray-600 text-center sm:text-left">
             Curated tools, technologies, and resources for developers building
             modern software.
           </p>
-          <div className="flex gap-8 text-gray-900">
+          <div className="flex gap-8 text-gray-900 justify-center sm:justify-start">
             <a href="">GitHub</a>
             <a href="">Twitter</a>
             <a href="">LinkedIn</a>
@@ -19,7 +19,7 @@ const Footer = () => {
         </div>
 
         {/* 2nd part */}
-        <div>
+        <div className="hidden sm:block">
           <h1 className="font-bold">PRODUCT</h1>
           <div className="text-gray-600 pt-3 space-y-2 ">
             <h4>Home</h4>
@@ -29,7 +29,7 @@ const Footer = () => {
         </div>
 
         {/* 3rd part  */}
-        <div>
+        <div className="hidden sm:block">
           <h1 className="font-bold">COMPANY</h1>
           <div className="text-gray-600  pt-3 space-y-2">
             <h4>About</h4>
@@ -39,7 +39,7 @@ const Footer = () => {
         </div>
 
         {/* 4th part  */}
-        <div>
+        <div className="hidden sm:block">
           <h1 className="font-bold">LEGAL</h1>
           <div className="text-gray-600 pt-3 space-y-2">
             <h4>Privacy Policy</h4>
