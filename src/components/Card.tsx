@@ -11,7 +11,7 @@ const Card = ({
   isSelected: boolean;
 }) => {
   return (
-    <div className="border-1 border-gray-200 rounded-xl p-4">
+    <div className="border border-gray-200 rounded-xl p-4">
       <div className="flex justify-end ">
         <div className="w-fit rounded-4xl px-3 py-1 bg-blue-100 text-blue-400 border-2 border-blue-200">
           {technology.badge}
