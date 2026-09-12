@@ -1,6 +1,15 @@
 // import React from 'react';
 import type { Technology } from "./type/Type";
 
+const badgeColors: Record<string, string> = {
+  Popular: "bg-blue-100 text-blue-500 border-blue-200",
+  Fast: "bg-green-100 text-green-500 border-green-200",
+  Essential: "bg-orange-100 text-orange-500 border-orange-200",
+  "Top SQL": "bg-purple-100 text-purple-500 border-purple-200",
+  Containers: "bg-cyan-100 text-cyan-500 border-cyan-200",
+  Automation: "bg-pink-100 text-pink-500 border-pink-200",
+};
+
 const Card = ({
   technology,
   onAdd,
@@ -13,17 +22,25 @@ const Card = ({
   return (
     <div className="border border-gray-200 rounded-xl p-4">
       <div className="flex justify-end ">
-        <div className="w-fit rounded-4xl px-3 py-1 bg-blue-100 text-blue-400 border-2 border-blue-200">
+
+
+        <div className={`w-fit rounded-4xl px-3 py-1 border-2 ${badgeColors[technology.badge]}`}>
           {technology.badge}
         </div>
+
+
+
       </div>
+
+
+
 
       <img src={technology.icon} alt={technology.name} className="w-10 h-10" />
 
       <h2 className="font-bold text-xl my-4">{technology.name}</h2>
       <p className="text-gray-500 text-sm py-3">{technology.description}</p>
       <div className="flex justify-between gap-5 py-4">
-        <p className="bg-gray-200 px-2 py-1 rounded-xl text-sm">
+        <p className="bg-gray-200 px-2 py-1 rounded-xl text-sm ">
           {technology.category}
         </p>
         <p className="text-sm">{technology.difficulty}</p>
