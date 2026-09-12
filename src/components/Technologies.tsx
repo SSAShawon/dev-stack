@@ -18,11 +18,16 @@ const Technologies = () => {
   const [selectedTechnologies, setSelectedTechnologies] = useState<
     Technology[]
   >([]);
-
+     
   const handleAddTechnology = (technology: Technology) => {
-    console.log("Clicked:", technology);
     setSelectedTechnologies([...selectedTechnologies, technology]);
   };
+  const handleRemoveTechnology=(id:number)=>{
+    const remainingTechnologies=selectedTechnologies.filter(
+      (technologies)=>technologies.id !==id
+    )
+    setSelectedTechnologies(remainingTechnologies)
+  }
 
   return (
     <div>
@@ -87,14 +92,14 @@ const Technologies = () => {
                       </p>
                     </div>
                   </div>
-                  <button className="pr-3 text-gray-400 text-3xl">✕</button>
+                  <button onClick={()=>handleRemoveTechnology(technologies.id)} className="pr-3 text-gray-400 text-3xl">✕</button>
                 </div>
               ))
             )}
           </div>
 
           {selectedTechnologies.length > 0 && (
-            <button className="btn w-full mt-4 rounded-xl border border-red-300 text-red-500 bg-white">
+            <button onClick={()=>setSelectedTechnologies([])} className="btn w-full mt-4 rounded-xl border border-red-300 text-red-500 bg-white">
               Remove All
             </button>
           )}
