@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import Technologies from './components/Technologies';
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Suspense } from 'react';
 
 
 const App = () => {
@@ -14,7 +15,16 @@ const App = () => {
       <Hero/>
       <br />
       <br />
-      <Technologies/>
+
+      <Suspense fallback={
+        <div className='text-2xl text-center font-bold'>
+          <h1>Loading...</h1>
+          <h1> Please wait</h1>
+        </div>
+      }>
+        <Technologies/>
+      </Suspense>
+      
       <br />
       <br />
        <div className="divider"></div>
