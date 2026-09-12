@@ -14,10 +14,10 @@ const Hero = () => {
           side by side, and put together the stack that fits your next project.
         </p>
         <div className="py-4 flex gap-3">
-          <button className="btn text-white bg-linear-to-r from-orange-500 to-pink-500 rounded-xl">
+          <button className="btn text-white bg-linear-to-r from-orange-500 via-pink-500 to-violet-500 rounded-xl">
             Explore Technologies
           </button>
-          <button className="btn bg-white  ">Learn More</button>
+          <button className="btn bg-white rounded-xl border-gray-200 ">Learn More</button>
         </div>
       </div>
       <div className="">

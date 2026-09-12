@@ -7,8 +7,8 @@ const Nav = () => {
       <img src={logo} alt="Dev Stack" />
 
       {/* middle a nav item */}
-      <div className="flex gap-6 ">
-        <a href="#" className="text-pink-400 font-semibold">Home</a>
+      <div className="flex gap-6 text-gray-600">
+        <a href="#" className="text-pink-500 font-semibold">Home</a>
         <a href="#">Technologies</a>
         <a href="#">Projects</a>
         <a href="#">About</a>
@@ -18,7 +18,7 @@ const Nav = () => {
       {/* right sign in/up button */}
 
       <div className="flex gap-2">
-        <button className="btn bg-white border-0 px-7">Sign In</button>
+        <button className="btn bg-white border-0 text-gray-600 rounded-4xl px-7">Sign In</button>
         
         <button className="btn bg-pink-600 rounded-4xl px-7 text-white">Sign Up</button>
       </div>

@@ -11,7 +11,7 @@ const Card = ({
   isSelected: boolean;
 }) => {
   return (
-    <div className="border-2 border-blue-100 rounded-xl p-4">
+    <div className="border-1 border-gray-200 rounded-xl p-4">
       <div className="flex justify-end ">
         <div className="w-fit rounded-4xl px-3 py-1 bg-blue-100 text-blue-400 border-2 border-blue-200">
           {technology.badge}
@@ -32,11 +32,11 @@ const Card = ({
       <div className="">
         <button
           onClick={() => onAdd(technology)}
-          disabled={isSelected}
-          className={`btn w-full rounded-xl ${
+          // disabled={isSelected}
+          className={`w-full py-2.5 rounded-xl font-semibold border ${
             isSelected
               ? "bg-pink-100 text-pink-500 border-pink-200"
-              : "btn-neutral"
+              : " text-white bg-black"
           }`}>
           {isSelected ? "✓ Added to Stack":"Add to Stack"}
         </button>
