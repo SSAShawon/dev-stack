@@ -3,6 +3,7 @@
 import { use, useState } from "react";
 import Card from "./Card";
 import type { Technology } from "./type/Type";
+import { toast } from "react-toastify";
 
 const getTechnologies = async (): Promise<Technology[]> => {
   const res = await fetch("/technologies.json");
@@ -18,15 +19,41 @@ const Technologies = () => {
   const [selectedTechnologies, setSelectedTechnologies] = useState<
     Technology[]
   >([]);
-     
+    
+
+
+
   const handleAddTechnology = (technology: Technology) => {
+    const alreadySelected = selectedTechnologies.some((item)=>item.id===technology.id)
+
+    if(alreadySelected){
+      toast.warning(`${technology.name} is already in your stack`)
+      return;
+    }
     setSelectedTechnologies([...selectedTechnologies, technology]);
+    toast.success(`${technology.name} added to your stack`)
   };
+
+
+
   const handleRemoveTechnology=(id:number)=>{
+    const removedTechnology=selectedTechnologies.find((technology)=>
+      technology.id ===id
+  )
+
     const remainingTechnologies=selectedTechnologies.filter(
-      (technologies)=>technologies.id !==id
+      (technology)=>technology.id !==id
     )
     setSelectedTechnologies(remainingTechnologies)
+
+    if(removedTechnology){
+      toast.info(`${removedTechnology.name} removed from your stack.`);
+    }
+  }
+
+  const handRemoveAll=()=>{
+    setSelectedTechnologies([]);
+    toast.info("All Technologies removed from your stack.")
   }
 
   return (
@@ -62,14 +89,14 @@ const Technologies = () => {
         <div className="col-span-1 border-2 border-gray-300 px-6 py-4 self-start">
           <h2 className="text-2xl font-bold py-2">Your Stack</h2>
           <p className="text-gray-400 py-2">
-            {selectedTechnologies.length===0 ? "No technologies selected yet." : `${selectedTechnologies.length} technology selected`}
+            {selectedTechnologies.length===0 ? "No Technologies Selected yet." : `${selectedTechnologies.length} Technology Selected`}
           </p>
 
           <div className="space-y-3">
             {selectedTechnologies.length === 0 ? (
               <div className="border-2 border-dashed rounded-2xl border-gray-300">
                 <p className="text-center text-gray-400 p-10">
-                  Your stack is empty
+                  Your Stack is empty
                 </p>
               </div>
             ) : (
@@ -99,7 +126,7 @@ const Technologies = () => {
           </div>
 
           {selectedTechnologies.length > 0 && (
-            <button onClick={()=>setSelectedTechnologies([])} className="btn w-full mt-4 rounded-xl border border-red-300 text-red-500 bg-white">
+            <button onClick={handRemoveAll} className="btn w-full mt-4 rounded-xl border border-red-300 text-red-500 bg-white">
               Remove All
             </button>
           )}
