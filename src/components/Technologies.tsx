@@ -68,10 +68,10 @@ const Technologies = () => {
       </div>
 
       {/* card section */}
-      <div className="w-[80%] mx-auto grid grid-cols-4 gap-6">
+      <div className="w-[80%] mx-auto grid grid-cols-1 lg:grid-cols-4 gap-6">
         {/* Tech Card  */}
-        <div className="col-span-3">
-          <div className="grid grid-cols-3 gap-5">
+        <div className="lg:col-span-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {technologies.map((technology) => (
               <Card
                 key={technology.id}
@@ -86,7 +86,7 @@ const Technologies = () => {
         </div>
 
         {/* Select Card  */}
-        <div className="col-span-1 border border-gray-300 rounded-xl px-6 py-4 self-start">
+        <div className="sm:col-span-1 border border-gray-300 rounded-xl px-6 py-4 self-start">
           <h2 className="text-2xl font-bold py-2">Your Stack</h2>
           <p className="text-gray-400 py-2">
             {selectedTechnologies.length===0 ? "No Technologies Selected yet." : `${selectedTechnologies.length} Technology Selected`}
