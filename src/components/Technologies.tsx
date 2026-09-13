@@ -60,7 +60,7 @@ const Technologies = () => {
     <div>
       <div className="w-[80%] mx-auto">
         <h1 className="text-4xl font-bold py-4">
-          Explore the <span className="text-pink-500">Technologies</span>
+          Explore the <span className="bg-linear-to-r from-orange-500 via-pink-500 to-violet-500 bg-clip-text text-transparent">Technologies</span>
         </h1>
         <p className="pb-6 text-gray-600">
           Pick one technology per category to build your ideal stack.

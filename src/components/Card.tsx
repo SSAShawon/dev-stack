@@ -2,12 +2,12 @@
 import type { Technology } from "./type/Type";
 
 const badgeColors: Record<string, string> = {
-  Popular: "bg-blue-100 text-blue-500 border-blue-200",
-  Fast: "bg-green-100 text-green-500 border-green-200",
-  Essential: "bg-orange-100 text-orange-500 border-orange-200",
-  "Top SQL": "bg-purple-100 text-purple-500 border-purple-200",
-  Containers: "bg-cyan-100 text-cyan-500 border-cyan-200",
-  Automation: "bg-pink-100 text-pink-500 border-pink-200",
+  Popular:      "bg-blue-100 text-blue-500 border-blue-200",
+  Fast:         "bg-green-100 text-green-500 border-green-200",
+  Essential:    "bg-orange-100 text-orange-500 border-orange-200",
+  "Top SQL":    "bg-purple-100 text-purple-500 border-purple-200",
+  Containers:   "bg-cyan-100 text-cyan-500 border-cyan-200",
+  Automation:   "bg-pink-100 text-pink-500 border-pink-200",
 };
 
 const Card = ({
